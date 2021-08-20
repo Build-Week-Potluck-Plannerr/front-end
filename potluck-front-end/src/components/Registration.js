@@ -1,16 +1,29 @@
 import React, { useState } from "react";
+// import { connect } from "react-redux";
+// import { userRegistration } from "../api/actions";
 
-const initialValues = {
-  username: "",
-  name: "",
-  password: "",
-};
+const Registration = (props) => {
+  const [user, setUser] = useState({
+    username: "",
+    name: "",
+    password: "",
+  });
 
-const Registration = () => {
-  const [user, setUser] = useState(initialValues);
+  const onInputChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    // passes user state to actions.js
+    // props.userRegistration(user);
+  };
 
   return (
-    <form>
+    <form onSubmit={formSubmit}>
       <h2>Create An Account</h2>
       <input
         type="text"
@@ -30,8 +43,19 @@ const Registration = () => {
         placeholder="Password"
         onChange={onInputChange}
       />
+      <button>Sign Up</button>
     </form>
   );
 };
+
+// const mapStateToProps = (state) => {
+//     return {
+//       user: state.user,
+//     };
+//   };
+
+// const mapDispatchToProps = { userRegistration };
+
+// export default connect(mapStateToProps, mapDispathToProps)(Registration)
 
 export default Registration;
