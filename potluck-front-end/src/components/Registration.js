@@ -25,23 +25,29 @@ const Registration = (props) => {
   return (
     <form onSubmit={formSubmit}>
       <h2>Create An Account</h2>
+      <label htmlFor="username">Username:</label>
       <input
+        id="username"
         type="text"
         name="username"
-        placeholder="Username"
         onChange={onInputChange}
+        maxLength="30"
       />
+      <label htmlFor="name">Name:</label>
       <input
+        id="name"
         type="text"
         name="name"
-        placeholder="Name"
         onChange={onInputChange}
+        maxLength="30"
       />
+      <label htmlFor="password">Password:</label>
       <input
+        id="password"
         type="password"
         name="password"
-        placeholder="Password"
         onChange={onInputChange}
+        maxLength="30"
       />
       <button>Sign Up</button>
     </form>
