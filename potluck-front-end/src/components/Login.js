@@ -1,15 +1,10 @@
-import React, { useState } from 'react'
-
-const initValues = {
-  username: '',
-  password: ''
-}
+import React, { useState } from 'react';
 
 function Login() {
-  const [loginValues, setLoginValues] = useState(initValues);
+  const [user, setUser] = useState({ username: '', password: '' });
 
   const handleLoginChange = (e) => {
-    setLoginValues({ ...loginValues, [e.target.name]: e.target.value })
+    setUser({ ...user, [e.target.name]: e.target.value })
   }
 
   const handleLoginSubmit = (e) => {
@@ -22,7 +17,7 @@ function Login() {
         <label htmlFor='username'>Username</label>
         <input
           id='username'
-          value={loginValues.username}
+          value={user.username}
           name='username'
           onChange={handleLoginChange}
         />
@@ -30,11 +25,13 @@ function Login() {
         <label htmlFor='password'>Password</label>
         <input
           id='password'
-          value={loginValues.password}
+          value={user.password}
           name='password'
           onChange={handleLoginChange}
         />
-        <div><button>Login</button></div>
+        <div>
+          <button>Login</button>
+        </div>
       </form>
     </div>
   )
