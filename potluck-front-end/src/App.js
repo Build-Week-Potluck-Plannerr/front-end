@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Potluck from "./components/Potluck";
 
 import Login from "./components/Login";
 import Registration from "./components/Registration";
@@ -16,6 +17,10 @@ function App() {
 
         <Route path="/register">
           <Registration />
+        </Route>
+
+        <Route path='/potluck'>
+          <Potluck />
         </Route>
       </div>
     </Router>
