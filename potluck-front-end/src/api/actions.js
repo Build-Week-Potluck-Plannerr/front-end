@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+// import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 export const API_ACTION_START = "API_ACTION_START";
 export const API_ACTION_FAIL = "API_ACTION_FAIL";
@@ -8,8 +8,8 @@ export const USER_REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
 
 export const userLogin = (loginInfo) => (dispatch) => {
   dispatch({ type: API_ACTION_START })
-  axiosWithAuth()
-    .post('/login', loginInfo)
+  axios
+    .post('https://reqres.in/api/login', loginInfo)
     .then((res) => {
       console.log(res)
       localStorage.setItem('token', res.data.token)
