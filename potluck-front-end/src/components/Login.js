@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { userLogin } from '../api/actions';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-function Login() {
+function Login(props) {
   const [user, setUser] = useState({ username: '', password: '' });
+  const { push } = useHistory()
 
   const handleLoginChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
@@ -9,7 +14,14 @@ function Login() {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault()
+    props.userLogin(user)
   }
+
+  useEffect(() => {
+    if (localStorage.getItem('token' !== null)) {
+      push('/potluck')
+    }
+  }, [handleLoginSubmit])
 
   return (
     <div>
@@ -37,4 +49,14 @@ function Login() {
   )
 }
 
-export default Login
+const mapStateToProps = (state) => {
+  return {
+    // isLoading: state.isLoading,
+    user: state.user,
+    // error: state.error,
+    // success: state.success,
+  };
+};
+
+const mapDispatchToProps = { userLogin }
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
