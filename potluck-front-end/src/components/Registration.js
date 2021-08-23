@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 // import { connect } from "react-redux";
 // import { userRegistration } from "../api/actions";
 
@@ -20,6 +21,11 @@ const Registration = (props) => {
     e.preventDefault();
     // passes user state to actions.js
     // props.userRegistration(user);
+    axios
+      .post('https://reqres.in/api/users', user)
+      .then((res) => {
+        console.log(res)
+      })
   };
 
   return (
