@@ -12,7 +12,7 @@ function App() {
       <div>
         <h1>Potluck Planner</h1>
         <Route exact path="/" component={Login} />
-        <Route path="/login" component={Login} />
+        {/* <Route path="/login" component={Login} /> */}
         <Route path="/register" component={Registration} />
         <PrivateRoute path="/potluck" component={Potluck} />
       </div>

@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Login(props) {
   const [user, setUser] = useState({ username: "", password: "" });
-  const { push } = useHistory();
+  const history = useHistory();
 
   const handleLoginChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -17,8 +17,8 @@ function Login(props) {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("token" !== null)) {
-      push("/potluck");
+    if (localStorage.getItem("token") !== null) {
+      history.push("/potluck");
     }
   }, [handleLoginSubmit]);
 
@@ -40,9 +40,7 @@ function Login(props) {
           name="password"
           onChange={handleLoginChange}
         />
-        <div>
-          <button>Login</button>
-        </div>
+        <input type="submit" />
       </form>
     </div>
   );
@@ -50,12 +48,13 @@ function Login(props) {
 
 const mapStateToProps = (state) => {
   return {
-    // isLoading: state.isLoading,
+    isLoading: state.isLoading,
     user: state.user,
-    // error: state.error,
-    // success: state.success,
+    error: state.error,
+    success: state.success,
   };
 };
 
 const mapDispatchToProps = { userLogin };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
