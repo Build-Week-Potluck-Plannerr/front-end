@@ -9,7 +9,7 @@ export const USER_REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
 export const userLogin = (loginInfo) => (dispatch) => {
   dispatch({ type: API_ACTION_START })
   axios
-    .post('/login', loginInfo)
+    .post('https://reqres.in/api/login', loginInfo)
     .then((res) => {
       console.log(res)
       localStorage.setItem('token', res.data.token)

@@ -15,11 +15,12 @@ function Login(props) {
   const handleLoginSubmit = (e) => {
     e.preventDefault()
     props.userLogin(user)
+    push('/potluck')
   }
 
   useEffect(() => {
     if (localStorage.getItem('token' !== null)) {
-      push('/potluck')
+      push('/login')
     }
   }, [handleLoginSubmit])
 
