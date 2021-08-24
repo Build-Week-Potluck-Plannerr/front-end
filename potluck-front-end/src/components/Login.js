@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Login(props) {
   const [user, setUser] = useState({ username: "", password: "" });
-  const history = useHistory();
+  const { push } = useHistory();
 
   const handleLoginChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -18,7 +18,7 @@ function Login(props) {
 
   useEffect(() => {
     if (localStorage.getItem("token") !== null) {
-      history.push("/potluck");
+      push("/potluck");
     }
   }, [handleLoginSubmit]);
 
