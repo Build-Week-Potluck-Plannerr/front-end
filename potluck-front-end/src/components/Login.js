@@ -1,63 +1,59 @@
-import React, { useState, useEffect } from 'react';
-// import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { userLogin } from '../api/actions';
-import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { userLogin } from "../api/actions";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function Login(props) {
-  const [user, setUser] = useState({ username: '', password: '' });
-  const { push } = useHistory()
+  const [user, setUser] = useState({ username: "", password: "" });
+  const { push } = useHistory();
 
   const handleLoginChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
-  }
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
   const handleLoginSubmit = (e) => {
-    e.preventDefault()
-    props.userLogin(user)
-    push('/potluck')
-  }
+    e.preventDefault();
+    props.userLogin(user);
+  };
 
   useEffect(() => {
-    if (localStorage.getItem('token' !== null)) {
-      push('/login')
-    }
-  }, [handleLoginSubmit])
+    if (localStorage.getItem("token") !== null) {
+      push("/potluck");
+  }, [handleLoginSubmit]);
 
   return (
     <div>
       <form onSubmit={handleLoginSubmit}>
-        <label htmlFor='username'>Username</label>
+        <label htmlFor="username">Username</label>
         <input
-          id='username'
+          id="username"
           value={user.username}
-          name='username'
+          name="username"
           onChange={handleLoginChange}
         />
 
-        <label htmlFor='password'>Password</label>
+        <label htmlFor="password">Password</label>
         <input
-          id='password'
+          id="password"
           value={user.password}
-          name='password'
+          name="password"
           onChange={handleLoginChange}
         />
-        <div>
-          <button>Login</button>
-        </div>
+        <input type="submit" />
       </form>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = (state) => {
   return {
-    // isLoading: state.isLoading,
+    isLoading: state.isLoading,
     user: state.user,
-    // error: state.error,
-    // success: state.success,
+    error: state.error,
+    success: state.success,
   };
 };
 
-const mapDispatchToProps = { userLogin }
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+const mapDispatchToProps = { userLogin };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
