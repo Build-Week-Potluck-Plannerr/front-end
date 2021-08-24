@@ -19,6 +19,7 @@ function Login(props) {
   useEffect(() => {
     if (localStorage.getItem("token") !== null) {
       push("/potluck");
+    }
   }, [handleLoginSubmit]);
 
   return (
