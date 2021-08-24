@@ -22,7 +22,16 @@ export const userLogin = (loginInfo) => (dispatch) => {
 
 export const userRegister = (regInfo) => (dispatch) => {
   dispatch({ type: API_ACTION_START });
-  // AXIOS POST HERE
+  axios
+    .post("https://reqres.in/api/register", regInfo)
+    .then((res) => {
+      console.log(res)
+      localStorage.setItem("token", res.data.token)
+      dispatch({ type: USER_REGISTER_SUCCESS, payload: res.data.data })
+    })
+    .catch((err) => {
+      dispatch({ type: API_ACTION_FAIL, payload: err })
+    })
 };
 
 export const getPotluck = () => (dispatch) => {

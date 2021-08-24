@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from 'axios';
-// import { connect } from "react-redux";
-// import { userRegistration } from "../api/actions";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { userRegister } from "../api/actions";
 
 const Registration = (props) => {
   const [user, setUser] = useState({
@@ -9,6 +10,7 @@ const Registration = (props) => {
     name: "",
     password: "",
   });
+  const { push } = useHistory();
 
   const onInputChange = (e) => {
     setUser({
@@ -19,14 +21,19 @@ const Registration = (props) => {
 
   const formSubmit = (e) => {
     e.preventDefault();
-    // passes user state to actions.js
-    // props.userRegistration(user);
-    axios
-      .post('https://reqres.in/api/users', user)
-      .then((res) => {
-        console.log(res)
-      })
+    props.userRegister(user);
   };
+
+  // used for useEffect dependency array, more stability
+  const registerCallback = useCallback(() => {
+    formSubmit();
+  });
+
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      push("/potluck");
+    }
+  }, [registerCallback]);
 
   return (
     <form onSubmit={formSubmit}>
@@ -60,14 +67,15 @@ const Registration = (props) => {
   );
 };
 
-// const mapStateToProps = (state) => {
-//     return {
-//       user: state.user,
-//     };
-//   };
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+    user: state.user,
+    error: state.error,
+    success: state.success,
+  };
+};
 
-// const mapDispatchToProps = { userRegistration };
+const mapDispatchToProps = { userRegister };
 
-// export default connect(mapStateToProps, mapDispathToProps)(Registration)
-
-export default Registration;
+export default connect(mapStateToProps, mapDispatchToProps)(Registration)
