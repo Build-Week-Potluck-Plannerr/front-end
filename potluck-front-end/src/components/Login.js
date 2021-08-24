@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { userLogin } from "../api/actions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -16,11 +16,16 @@ function Login(props) {
     props.userLogin(user);
   };
 
+  // used for useEffect dependency array, more stability
+  const loginCallback = useCallback(() => {
+    handleLoginSubmit();
+  });
+
   useEffect(() => {
     if (localStorage.getItem("token") !== null) {
       push("/potluck");
     }
-  }, [handleLoginSubmit]);
+  }, [loginCallback]);
 
   return (
     <div>

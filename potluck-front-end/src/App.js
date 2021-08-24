@@ -14,11 +14,10 @@ function App() {
         <Route exact path="/" component={Login} />
         <PrivateRoute path="/potluck" component={Potluck} />
       </div>
-        {/* <Route path="/login" component={Login} /> */}
-        <Route path="/register" component={Registration} />
+      {/* <Route path="/login" component={Login} /> */}
+      <Route path="/register" component={Registration} />
     </Router>
   );
 }
 
 export default App;
-
