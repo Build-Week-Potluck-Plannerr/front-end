@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import '../styles/nav.css'
 
 function Nav() {
   const [navToggle, setNavToggle] = useState(false);
+  const { push } = useHistory()
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.replace('/');
+    push('/login');
   };
 
   return (
@@ -36,7 +38,7 @@ function Nav() {
       </div>
 
       <div className="logout-container">
-        <Link to="/logout" onClick={handleLogout}>
+        <Link onClick={handleLogout}>
           Logout
         </Link>
       </div>
