@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import GuestList from './GuestList';
 
 const Potluck = () => {
     const defaultState = {
