@@ -1,5 +1,6 @@
 :root {
   --background-color: #f1d9b3;
+  --nav-hover: #e2cba7;
   --title-color: #ba7066;
 }
 
@@ -31,16 +32,26 @@
   position: absolute;
   top: 70px;
   left: 0;
-  height: 50%;
+  height: 55%;
+}
+
+.side-menu-container .menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nav-hover);
+  margin: 0 10px 10px 10px;
+  height: 130px;
+  font-size: .8rem;
 }
 
 .side-menu-container div {
-  background: #f1d9b3;
+  background: var(--background-color);
   padding: 20px;
   text-align: center;
   font-size: 1.2rem;
 }
 
 .side-menu-container div:hover {
-  background: #e2cba7;
+  background: var(--nav-hover);
 }

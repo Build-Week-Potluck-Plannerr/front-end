@@ -16,6 +16,9 @@ function Nav() {
       {
         navToggle &&
         <div className="side-menu-container">
+          <div className="menu-logo">
+            logo here
+          </div>
           <div><Link to="/">Home</Link></div>
           <div><Link to="/">Host Potluck</Link></div>
           <div><Link to="/">Create Potluck</Link></div>
