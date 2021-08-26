@@ -1,0 +1,46 @@
+:root {
+  --background-color: #f1d9b3;
+  --title-color: #ba7066;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--background-color);
+  align-items: center;
+  height: 30px;
+  padding: 20px;
+}
+
+.nav-header a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-header p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.side-menu-container {
+  width: 265px;
+  background: var(--background-color);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  height: 50%;
+}
+
+.side-menu-container div {
+  background: #f1d9b3;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.side-menu-container div:hover {
+  background: #e2cba7;
+}
