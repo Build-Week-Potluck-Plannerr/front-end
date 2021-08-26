@@ -1,0 +1,57 @@
+:root {
+  --background-color: #f1d9b3;
+  --nav-hover: #e2cba7;
+  --title-color: #ba7066;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--background-color);
+  align-items: center;
+  height: 30px;
+  padding: 20px;
+}
+
+.nav-header a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-header p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.side-menu-container {
+  width: 265px;
+  background: var(--background-color);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  height: 55%;
+}
+
+.side-menu-container .menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nav-hover);
+  margin: 0 10px 10px 10px;
+  height: 130px;
+  font-size: .8rem;
+}
+
+.side-menu-container div {
+  background: var(--background-color);
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.side-menu-container div:hover {
+  background: var(--nav-hover);
+}
