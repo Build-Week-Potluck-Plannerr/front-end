@@ -37,7 +37,7 @@ function Nav() {
       </div>
 
       <div className="logout-container">
-        <Link to="/logout" onClick={handleLogout}>
+        <Link onClick={handleLogout}>
           Logout
         </Link>
       </div>
