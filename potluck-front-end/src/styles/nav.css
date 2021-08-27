@@ -1,15 +1,20 @@
 :root {
   --background-color: #f1d9b3;
-  --nav-hover: #e2cba7;
-  --title-color: #ba7066;
+  --background-color2: #c4ac87;
+  --background-color3: #dbc49f;
+  --accent-color: #326068;
+  --accent-color2: #77352c;
 }
 
+body {
+  background:var(--background-color);
+}
 .nav-header {
   display: flex;
   justify-content: space-between;
-  background: var(--background-color);
+  background: var(--background-color3);
   align-items: center;
-  height: 30px;
+  height: 70px;
   padding: 20px;
 }
 
@@ -23,12 +28,11 @@
 .nav-header p {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--title-color);
 }
 
 .side-menu-container {
   width: 265px;
-  background: var(--background-color);
+  background: var(--background-color3);
   position: absolute;
   top: 70px;
   left: 0;
@@ -39,19 +43,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--nav-hover);
+  background: var(--background-color2);
   margin: 0 10px 10px 10px;
   height: 130px;
   font-size: .8rem;
 }
 
 .side-menu-container div {
-  background: var(--background-color);
   padding: 20px;
   text-align: center;
   font-size: 1.2rem;
 }
 
 .side-menu-container div:hover {
-  background: var(--nav-hover);
+  background: var(--background-color2);
 }

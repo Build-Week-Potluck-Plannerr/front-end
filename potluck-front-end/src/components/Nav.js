@@ -33,7 +33,7 @@ function Nav() {
       </div>
 
       <div className="hello-user">
-        <p>$Component Name</p>
+        <p>Potluck Planner</p>
       </div>
 
       <div className="logout-container">
