@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
 import "../styles/home.css";
 
 const Home = () => {
@@ -11,10 +12,10 @@ const Home = () => {
 
         <div className="home-container">
           <div className="left">
-            <a href="/register">Create an account</a>
+            <Link to="/register">Create an account</Link>
           </div>
           <div className="right">
-            <a href="/login">Login to your account</a>
+            <Link to="/login">Login to your account</Link>
           </div>
         </div>
       </section>
