@@ -1,10 +1,19 @@
 import React from "react";
-import Nav from "./Nav";
+
+import "../styles/home.css";
 
 const Home = () => {
   return (
     <div>
-      <Nav />
+      <section className="hero-section">
+        <div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
+          sapiente?
+        </div>
+        <div>
+          <a href="/register">Register</a>
+        </div>
+      </section>
     </div>
   );
 };
