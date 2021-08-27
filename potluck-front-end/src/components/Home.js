@@ -1,20 +1,24 @@
 import React from "react";
-
 import "../styles/home.css";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <section className="hero-section">
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
-          sapiente?
+        <div class="home-title">
+          <h1>POTLUCK PLANNER</h1>
         </div>
-        <div>
-          <a href="/register">Register</a>
+
+        <div class="home-container">
+          <div class="left">
+            <a href="/register">Create an account</a>
+          </div>
+          <div class="right">
+            <a href="/login">Login to your account</a>
+          </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
