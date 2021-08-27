@@ -5,15 +5,15 @@ const Home = () => {
   return (
     <>
       <section className="hero-section">
-        <div class="home-title">
+        <div className="home-title">
           <h1>POTLUCK PLANNER</h1>
         </div>
 
-        <div class="home-container">
-          <div class="left">
+        <div className="home-container">
+          <div className="left">
             <a href="/register">Create an account</a>
           </div>
-          <div class="right">
+          <div className="right">
             <a href="/login">Login to your account</a>
           </div>
         </div>
