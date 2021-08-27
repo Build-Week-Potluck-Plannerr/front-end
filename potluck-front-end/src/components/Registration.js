@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userRegister } from "../api/actions";
@@ -78,4 +78,4 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = { userRegister };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Registration)
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);
