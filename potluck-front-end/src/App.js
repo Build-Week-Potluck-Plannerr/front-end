@@ -15,7 +15,8 @@ function App() {
         <Nav />
         <h1>Potluck Planner</h1>
         <Route exact path="/" component={Login} />
-        <PrivateRoute path="/potluck" component={Potluck} />
+        {/* <PrivateRoute path="/potluck" component={Potluck} /> */}
+        <Route path="/potluck" component={Potluck} />
         <Route path="/register" component={Registration} />
         <Route path="/login" component={Login} />
       </div>
