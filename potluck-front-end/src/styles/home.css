@@ -6,7 +6,8 @@
 
 :root {
   --background-color: #f1d9b3;
-  --background-color2: #e2cba7;
+  --background-color2: #c4ac87;
+  --background-color3: #dbc49f;
   --accent-color: #326068;
   --accent-color2: #77352c;
 }
@@ -16,12 +17,19 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .home-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--background-color2);
+  /* background: var(--background-color2); */
   color: var(--accent-color);
+  margin-top: 70px;
+  font-size: 2rem;
 }
 
 .home-container {
@@ -36,9 +44,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--background-color2);
+  background: var(--background-color3);
   height: 350px;
   width: 400px;
   margin: 20px;
   border-radius: 10px;
+  font-size: 1.5rem;
 }
