@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { userLogin } from "../api/actions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Nav from "./Nav";
 
 function Login(props) {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -28,7 +29,8 @@ function Login(props) {
   }, [loginCallback]);
 
   return (
-    <div>
+    <>
+      <Nav />
       <form onSubmit={handleLoginSubmit}>
         <label htmlFor="username">Username</label>
         <input
@@ -47,7 +49,7 @@ function Login(props) {
         />
         <input type="submit" />
       </form>
-    </div>
+    </>
   );
 }
 
