@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import '../styles/nav.css'
+import { ImHome3, ImSwitch, ImHeart, ImSpoonKnife, ImBubbles } from "react-icons/im";
+import logo from '../images/logo.png';
+import '../styles/nav.css';
 
 function Nav() {
   const [navToggle, setNavToggle] = useState(false);
@@ -18,13 +20,13 @@ function Nav() {
         navToggle &&
         <div className="side-menu-container">
           <div className="menu-logo">
-            logo here
+            <img className="logo" src={logo} />
           </div>
-          <div><Link to="/">Home</Link></div>
-          <div><Link to="/">Host Potluck</Link></div>
-          <div><Link to="/">Create Potluck</Link></div>
-          <div><Link to="/">My Potlucks</Link></div>
-          <div><Link to="/">Logout</Link></div>
+          <div className="link-container"><Link to="/"><span className="span-icon"><ImHome3 className="menu-icon" /></span><span className="menu-text">Home</span></Link></div>
+          <div className="link-container"><Link to="/potluck"><span className="span-icon"><ImSpoonKnife className="menu-icon" /></span><span className="menu-text">Create a Potluck</span></Link></div>
+          <div className="link-container"><Link to="/"><span className="span-icon"><ImHeart className="menu-icon" /></span><span className="menu-text">View Potlucks</span></Link></div>
+          <div className="link-container"><Link to="/about"><span className="span-icon"><ImBubbles className="menu-icon" /></span><span className="menu-text">About</span></Link></div>
+          <div className="link-container"><Link to="/login"><span className="span-icon"><ImSwitch className="menu-icon" /></span><span className="menu-text">Logout</span></Link></div>
         </div>
       }
 

@@ -36,7 +36,7 @@ body {
   position: absolute;
   top: 70px;
   left: 0;
-  height: 55%;
+  height: 489px;
 }
 
 .side-menu-container .menu-logo {
@@ -50,11 +50,41 @@ body {
 }
 
 .side-menu-container div {
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* text-align: center; */
   font-size: 1.2rem;
 }
 
 .side-menu-container div:hover {
   background: var(--background-color2);
+}
+
+.link-container span {
+  margin-right: 10px;
+}
+
+.span-icon {
+  display: inline-block;
+  line-height: 55px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  /* background: var(--background-color2); */
+}
+
+.menu-icon {
+  font-size: 30px;
+}
+
+.menu-text {
+  display: inline-block;
+  line-height:27px;
+  vertical-align: middle;
+  height: 41px;
+}
+
+.logo {
+  width: 50%;
 }
