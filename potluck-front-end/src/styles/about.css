@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #f1d9b3;
+  --background-color2: #c4ac87;
+  --background-color3: #dbc49f;
+  --accent-color: #326068;
+  --accent-color2: #77352c;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.about {
+  max-width: 700px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.about p {
+  padding: 10px;
+}
