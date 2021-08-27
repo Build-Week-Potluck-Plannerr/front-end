@@ -9,7 +9,7 @@ export const USER_REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
 export const userLogin = (loginInfo) => (dispatch) => {
   dispatch({ type: API_ACTION_START });
   axios
-    .post("https://reqres.in/api/login", loginInfo)
+    .post("https://mysterious-river-93270.herokuapp.com/api/auth/login", loginInfo)
     .then((res) => {
       console.log(res);
       localStorage.setItem("token", res.data.token);
@@ -23,7 +23,7 @@ export const userLogin = (loginInfo) => (dispatch) => {
 export const userRegister = (regInfo) => (dispatch) => {
   dispatch({ type: API_ACTION_START });
   axios
-    .post("https://reqres.in/api/register", regInfo)
+    .post("https://mysterious-river-93270.herokuapp.com/api/auth/register", regInfo)
     .then((res) => {
       console.log(res)
       localStorage.setItem("token", res.data.token)
