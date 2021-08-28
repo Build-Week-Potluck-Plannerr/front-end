@@ -8,6 +8,7 @@ import Nav from "./Nav";
 const Registration = (props) => {
   const [user, setUser] = useState({
     username: "",
+    email: "",
     name: "",
     password: "",
   });
@@ -46,6 +47,14 @@ const Registration = (props) => {
           id="username"
           type="text"
           name="username"
+          onChange={onInputChange}
+          maxLength="30"
+        />
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
           onChange={onInputChange}
           maxLength="30"
         />

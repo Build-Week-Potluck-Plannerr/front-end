@@ -45,6 +45,7 @@ function Login(props) {
           id="password"
           value={user.password}
           name="password"
+          type="password"
           onChange={handleLoginChange}
         />
         <input type="submit" />
