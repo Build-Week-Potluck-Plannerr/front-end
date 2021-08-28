@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
-import GuestList from "./GuestList";
 
 const Potluck = () => {
   const defaultState = {
@@ -9,6 +8,7 @@ const Potluck = () => {
     date: "",
     time: "",
     location: "",
+    guests: "",
     items: false,
   };
 
@@ -38,9 +38,7 @@ const Potluck = () => {
   };
 
   const inputChange = (evt) => {
-    const value =
-      evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
-    setFormState({ ...formState, [evt.target.name]: value });
+    setFormState({ ...formState, [evt.target.name]:evt.target.value });
   };
 
   return (
@@ -49,7 +47,7 @@ const Potluck = () => {
       <h2>My Potluck</h2>
       <h4>--share your info and potluck preferences below--</h4>
       <form onSubmit={formSubmit}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name </label>
         <input
           type="text"
           name="name"
@@ -57,7 +55,7 @@ const Potluck = () => {
           value={formState.name}
         />
 
-        <label htmlFor="date">Date</label>
+        <label htmlFor="date"> Date </label>
         <input
           type="date"
           min="2021-01-01"
@@ -66,8 +64,8 @@ const Potluck = () => {
           onChange={inputChange}
           value={formState.date}
         />
-
-        <label htmlFor="time">Time</label>
+        <br></br>
+        <label htmlFor="time"> Time </label>
         <input
           type="time"
           name="time"
@@ -75,62 +73,87 @@ const Potluck = () => {
           value={formState.time}
         />
 
-        <label htmlFor="location">Location</label>
+        <label htmlFor="location"> Location </label>
         <input
           type="text"
           name="location"
           onChange={inputChange}
           value={formState.location}
         />
+        <div>
         <br></br>
+            <label htmlFor="guests">Invite Guests via Email</label>
+            <br></br>
+            <input 
+            id="emailAddress"
+            type="email" multiple
+            input size="40"
+            placeholder="(addresses seperated by commas)"
+            name="guests"
+            onChange={inputChange}
+            value={formState.guests}
+            />
+        </div>
         <br></br>
-        <label htmlFor="items">Potluck Dishes</label>
-        <br></br>
+        <label htmlFor="items">Potluck Items needed</label>
         <div className="Potluck-items">
           <input
-            className="drinks"
+            className="items"
             name="items"
-            type="checkbox"
+            type="text" multiple
+            input size="25"
+            placeholder="(e.g. entree)"
             onChange={inputChange}
             value={formState.items}
           />
-          Drinks
-        </div>
-        <br></br>
-        <div>
           <input
-            className="entree"
+            className="items"
             name="items"
-            type="checkbox"
-            value="entree"
+            type="text" multiple
+            input size="25"
+            placeholder="(e.g. appetizers)"
+            onChange={inputChange}
+            value={formState.items}
           />
-          Entree
-        </div>
-        <br></br>
-        <div>
+        <input
+            className="items"
+            name="items"
+            type="text" multiple
+            input size="25"
+            placeholder="(e.g. sides)"
+            onChange={inputChange}
+            value={formState.items}
+          />
+          <br/>
           <input
-            className="appetizers"
+            className="items"
             name="items"
-            type="checkbox"
-            value="appetizers"
+            type="text" multiple
+            input size="25"
+            placeholder="(e.g. drinks)"
+            onChange={inputChange}
+            value={formState.items}
           />
-          Appetizers
-        </div>
-        <br></br>
-        <div>
-          <input className="sides" name="items" type="checkbox" value="sides" />
-          Sides
-        </div>
-        <br></br>
-        <div>
           <input
-            className="desserts"
+            className="items"
             name="items"
-            type="checkbox"
-            value="desserts"
+            type="text" multiple
+            input size="25"
+            placeholder="(e.g. desserts)"
+            onChange={inputChange}
+            value={formState.items}
           />
-          Dessert
+          <input
+            className="items"
+            name="items"
+            type="text" multiple
+            input size="25"
+            placeholder="(etc.)"
+            onChange={inputChange}
+            value={formState.items}
+          />
         </div>
+
         <br></br>
 
         <button id="submit" disabled={buttonDisabled}>
