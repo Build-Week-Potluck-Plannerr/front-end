@@ -8,6 +8,7 @@ import {
 export const initialState = {
   user: {
     username: "",
+    email: "",
     name: "",
     password: "",
     isOrganizer: false,
@@ -53,6 +54,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         username: "",
+        email: "",
         name: "",
         password: "",
         error: "",
