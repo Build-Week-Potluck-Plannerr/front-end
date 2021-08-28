@@ -9,8 +9,12 @@ const Potluck = () => {
     date: "",
     time: "",
     location: "",
-    guests: [],
-    items: false,
+    guests: [""],
+    drinks: "",
+    sides: "",
+    entrees: "",
+    dessert: "",
+    supplies: ""
   };
 
   const [host, setHost] = useState([]);
@@ -39,9 +43,9 @@ const Potluck = () => {
   };
 
   const inputChange = (evt) => {
-      const value =
-      evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
-    setFormState({ ...formState, [evt.target.name]: value });
+    //   const value =
+    //   evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
+    setFormState({ ...formState, [evt.target.name]: evt.target.value });
   };
 
   return (
@@ -67,7 +71,7 @@ const Potluck = () => {
           onChange={inputChange}
           value={formState.date}
         />
-        <br></br>
+        <br/>
         <label htmlFor="time"> Time </label>
         <input
           type="time"
@@ -84,9 +88,9 @@ const Potluck = () => {
           value={formState.location}
         />
         <div>
-        <br></br>
+        <br/>
             <label htmlFor="guests">Invite Guests via Email</label>
-            <br></br>
+            <br/>
             <input 
             id="emailAddress"
             type="email" multiple
@@ -97,221 +101,56 @@ const Potluck = () => {
             value={formState.guests}
             />
         </div>
-        <br></br>
-        <label htmlFor="items">Potluck Items needed</label>
-        <div className="item-container">
-          <div className="Potluck-items">
-            <h4>Drinks</h4>
+        <br/>
+        <p>Potluck Items needed:</p>
+        <br/>
+        <div className="items-container">
+            <label htmlFor="drinks">Drinks</label>
             <input
                 className="items"
-                name="items"
-                type="checkbox"
+                name="drinks"
+                type="text"
+                placeholder="soda..."
                 onChange={inputChange}
-                value="soda"
+                value={formState.drinks}
             />
-                Soda 
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="water"
-            />
-                Water
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="juice"
-            />
-                Juice
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="lemonade"
-            />
-                Lemonade  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="beer"
-            />
-                Beer              
-          </div>
-          <div className="Potluck-items">
-            <h4>Sides</h4>
+            <label htmlFor="sides">Sides</label>
             <input
                 className="items"
-                name="items"
-                type="checkbox"
+                name="sides"
+                type="text"
+                placeholder="chips..."
                 onChange={inputChange}
-                value="vegetables"
+                value={formState.sides}
             />
-                Vegetables 
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="bread"
-            />
-                Bread
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="chips"
-            />
-                Chips
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="nuts"
-            />
-                Nuts  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="salad"
-            />
-                Salad  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="crackers"
-            />
-                Crackers   
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="beans"
-            />
-                Beans         
-          </div>
-          <div className="Potluck-items">
-            <h4>Entrees</h4>
+            <label htmlFor="entrees">Entrees</label>
             <input
                 className="items"
-                name="items"
-                type="checkbox"
+                name="entrees"
+                type="text"
+                placeholder="veggie burgers..."
                 onChange={inputChange}
-                value="roasted-vegetables"
+                value={formState.entrees}
             />
-                Roasted Vegetables 
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="chicken"
-            />
-                Chicken
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="burgers"
-            />
-                Burgers
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="meatballs"
-            />
-                Meatballs  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="Ribs"
-            />
-                Ribs  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="pizza"
-            />
-                Pizza   
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="pasta"
-            />
-                Pasta         
-          </div>
-          <div className="Potluck-items">
-            <h4>Dessert</h4>
+            <label htmlFor="desserts">Desserts</label>
             <input
                 className="items"
-                name="items"
-                type="checkbox"
+                name="desserts"
+                type="text"
+                placeholder="ice cream..."
                 onChange={inputChange}
-                value="cookies"
+                value={formState.desserts}
             />
-                Cookies 
-                <input
+            <br/>
+            <label htmlFor="supplies">Supplies</label>
+            <input
                 className="items"
-                name="items"
-                type="checkbox"
+                name="supplies"
+                type="text"
+                placeholder="napkins..."
                 onChange={inputChange}
-                value="icecream"
+                value={formState.supplies}
             />
-                Ice Cream
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="pie"
-            />
-                Pie
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="cake"
-            />
-                Cake  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="bars"
-            />
-                Bars  
-                <input
-                className="items"
-                name="items"
-                type="checkbox"
-                onChange={inputChange}
-                value="doughnuts"
-            />
-                Doughnuts         
-          </div>
         </div>
 
         <br></br>
