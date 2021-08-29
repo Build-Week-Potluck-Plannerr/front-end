@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import '../styles/potluck.css';
 
 const Potluck = () => {
   const defaultState = {
@@ -49,8 +50,9 @@ const Potluck = () => {
   };
 
   return (
-    <div className="Potluck">
+    <div className="potluck">
       <Nav />
+      <div class='potluckcontainer'>
       <h2>My Potluck</h2>
       <h4>--share your info and potluck preferences below--</h4>
       <form onSubmit={formSubmit}>
@@ -156,9 +158,10 @@ const Potluck = () => {
         <br></br>
 
         <button id="submit" disabled={buttonDisabled}>
-          Enter
+          Create Event!
         </button>
       </form>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { ImHome3, ImSwitch, ImHeart, ImSpoonKnife, ImBubbles } from "react-icons/im";
-import logo from '../images/logo.png';
+import logo from '../Assets/Potluck.png';
 import '../styles/nav.css';
 
 function Nav() {
