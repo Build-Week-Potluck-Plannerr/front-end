@@ -1,0 +1,17 @@
+.potluckcontainer {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid #e8e8e8;
+    border-radius: 5px;
+    padding: 35px 25px;
+    background-color: tan;
+    margin-top: 50px;
+}
+
+.potluckcontainer h4 {
+    text-align: center;
+    text-decoration: bold;
+}
