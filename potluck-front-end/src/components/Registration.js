@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userRegister } from "../api/actions";
 import Nav from "./Nav";
+import '../styles/registration.css';
+import logo from '../Assets/Potluck.png';
 
 const Registration = (props) => {
   const [user, setUser] = useState({
@@ -40,8 +42,10 @@ const Registration = (props) => {
   return (
     <>
       <Nav />
+      <div class='registrationcontainer'>
+      <img src={logo} alt='logo'/>
       <form onSubmit={formSubmit}>
-        <h2>Create An Account</h2>
+        <h2>Create An Account</h2><br/>
         <label htmlFor="username">Username:</label>
         <input
           id="username"
@@ -73,9 +77,10 @@ const Registration = (props) => {
           name="password"
           onChange={onInputChange}
           maxLength="30"
-        />
+        /><br/><br/>
         <button>Sign Up</button>
-      </form>
+      </form> 
+      </div>
     </>
   );
 };

@@ -3,6 +3,8 @@ import { userLogin } from "../api/actions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Nav from "./Nav";
+import '../styles/login.css';
+import logo from '../Assets/Potluck.png';
 
 function Login(props) {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -31,8 +33,10 @@ function Login(props) {
   return (
     <>
       <Nav />
+      <div class='logincontainer'>
+      <img src={logo}/><br/>
       <form onSubmit={handleLoginSubmit}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Username:</label>
         <input
           id="username"
           value={user.username}
@@ -47,9 +51,10 @@ function Login(props) {
           name="password"
           type="password"
           onChange={handleLoginChange}
-        />
-        <input type="submit" />
+        /><br/><br/>
+        <button type="submit">Login</button>
       </form>
+      </div>
     </>
   );
 }
