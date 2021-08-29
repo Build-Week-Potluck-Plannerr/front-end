@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Potluck = () => {
   const defaultState = {
@@ -8,8 +9,12 @@ const Potluck = () => {
     date: "",
     time: "",
     location: "",
-    guests: "",
-    items: false,
+    guests: [""],
+    drinks: "",
+    sides: "",
+    entrees: "",
+    dessert: "",
+    supplies: ""
   };
 
   const [host, setHost] = useState([]);
@@ -28,7 +33,7 @@ const Potluck = () => {
     console.log("Form Submitted");
     /* this will need to be updated to the actual api*/
     axios
-      .post("http://localhost:5000/api/", formState)
+      .post("https://reqres.in/api", formState)
       .then((res) => {
         setHost(res.data);
         console.log(res.data);
@@ -38,7 +43,9 @@ const Potluck = () => {
   };
 
   const inputChange = (evt) => {
-    setFormState({ ...formState, [evt.target.name]:evt.target.value });
+    //   const value =
+    //   evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
+    setFormState({ ...formState, [evt.target.name]: evt.target.value });
   };
 
   return (
@@ -64,7 +71,7 @@ const Potluck = () => {
           onChange={inputChange}
           value={formState.date}
         />
-        <br></br>
+        <br/>
         <label htmlFor="time"> Time </label>
         <input
           type="time"
@@ -81,9 +88,9 @@ const Potluck = () => {
           value={formState.location}
         />
         <div>
-        <br></br>
+        <br/>
             <label htmlFor="guests">Invite Guests via Email</label>
-            <br></br>
+            <br/>
             <input 
             id="emailAddress"
             type="email" multiple
@@ -94,64 +101,56 @@ const Potluck = () => {
             value={formState.guests}
             />
         </div>
-        <br></br>
-        <label htmlFor="items">Potluck Items needed</label>
-        <div className="Potluck-items">
-          <input
-            className="items"
-            name="items"
-            type="text" multiple
-            input size="25"
-            placeholder="(e.g. entree)"
-            onChange={inputChange}
-            value={formState.items}
-          />
-          <input
-            className="items"
-            name="items"
-            type="text" multiple
-            input size="25"
-            placeholder="(e.g. appetizers)"
-            onChange={inputChange}
-            value={formState.items}
-          />
-        <input
-            className="items"
-            name="items"
-            type="text" multiple
-            input size="25"
-            placeholder="(e.g. sides)"
-            onChange={inputChange}
-            value={formState.items}
-          />
-          <br/>
-          <input
-            className="items"
-            name="items"
-            type="text" multiple
-            input size="25"
-            placeholder="(e.g. drinks)"
-            onChange={inputChange}
-            value={formState.items}
-          />
-          <input
-            className="items"
-            name="items"
-            type="text" multiple
-            input size="25"
-            placeholder="(e.g. desserts)"
-            onChange={inputChange}
-            value={formState.items}
-          />
-          <input
-            className="items"
-            name="items"
-            type="text" multiple
-            input size="25"
-            placeholder="(etc.)"
-            onChange={inputChange}
-            value={formState.items}
-          />
+        <br/>
+        <p>Potluck Items needed:</p>
+        <br/>
+        <div className="items-container">
+            <label htmlFor="drinks">Drinks</label>
+            <input
+                className="items"
+                name="drinks"
+                type="text"
+                placeholder="soda..."
+                onChange={inputChange}
+                value={formState.drinks}
+            />
+            <label htmlFor="sides">Sides</label>
+            <input
+                className="items"
+                name="sides"
+                type="text"
+                placeholder="chips..."
+                onChange={inputChange}
+                value={formState.sides}
+            />
+            <label htmlFor="entrees">Entrees</label>
+            <input
+                className="items"
+                name="entrees"
+                type="text"
+                placeholder="veggie burgers..."
+                onChange={inputChange}
+                value={formState.entrees}
+            />
+            <label htmlFor="desserts">Desserts</label>
+            <input
+                className="items"
+                name="desserts"
+                type="text"
+                placeholder="ice cream..."
+                onChange={inputChange}
+                value={formState.desserts}
+            />
+            <br/>
+            <label htmlFor="supplies">Supplies</label>
+            <input
+                className="items"
+                name="supplies"
+                type="text"
+                placeholder="napkins..."
+                onChange={inputChange}
+                value={formState.supplies}
+            />
         </div>
 
         <br></br>
