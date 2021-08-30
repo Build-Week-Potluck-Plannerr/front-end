@@ -33,27 +33,30 @@ function Login(props) {
   return (
     <>
       <Nav />
-      <div class='logincontainer'>
-      <img src={logo}/><br/>
-      <form onSubmit={handleLoginSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          id="username"
-          value={user.username}
-          name="username"
-          onChange={handleLoginChange}
-        />
+      <div className="center">
+        <div className='logincontainer'>
+          <h2>Login to your Account</h2><br /><br />
+          <img className="logo1" src={logo} /><br />
+          <form onSubmit={handleLoginSubmit}>
+            <label htmlFor="username">Username:</label>
+            <input
+              id="username"
+              value={user.username}
+              name="username"
+              onChange={handleLoginChange}
+            />
 
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          value={user.password}
-          name="password"
-          type="password"
-          onChange={handleLoginChange}
-        /><br/><br/>
-        <button type="submit">Login</button>
-      </form>
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              value={user.password}
+              name="password"
+              type="password"
+              onChange={handleLoginChange}
+            /><br /><br />
+            <button type="submit">Login</button>
+          </form>
+        </div>
       </div>
     </>
   );

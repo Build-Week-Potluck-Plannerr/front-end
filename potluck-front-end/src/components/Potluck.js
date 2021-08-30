@@ -3,6 +3,7 @@ import axios from "axios";
 import Nav from "../components/Nav";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import '../styles/potluck.css';
+import logo from '../Assets/Potluck.png';
 
 const Potluck = () => {
   const defaultState = {
@@ -50,118 +51,123 @@ const Potluck = () => {
   };
 
   return (
-    <div className="potluck">
+    <div>
       <Nav />
-      <div class='potluckcontainer'>
-      <h2>My Potluck</h2>
-      <h4>--share your info and potluck preferences below--</h4>
-      <form onSubmit={formSubmit}>
-        <label htmlFor="name">Name </label>
-        <input
-          type="text"
-          name="name"
-          onChange={inputChange}
-          value={formState.name}
-        />
+      <div className="center">
+        <div className='potluckcontainer'>
+          <img className="logo1" src={logo} />
+          <h2>Create your Potluck</h2>
+          <h4>share your info and potluck preferences below</h4>
+          <form onSubmit={formSubmit}>
 
-        <label htmlFor="date"> Date </label>
-        <input
-          type="date"
-          min="2021-01-01"
-          max="2025-12-31"
-          name="date"
-          onChange={inputChange}
-          value={formState.date}
-        />
-        <br/>
-        <label htmlFor="time"> Time </label>
-        <input
-          type="time"
-          name="time"
-          onChange={inputChange}
-          value={formState.time}
-        />
+            <div className="left">
+              <div>
+                <label htmlFor="name">Name </label>
+                <input
+                  type="text"
+                  name="name"
+                  onChange={inputChange}
+                  value={formState.name}
+                />
 
-        <label htmlFor="location"> Location </label>
-        <input
-          type="text"
-          name="location"
-          onChange={inputChange}
-          value={formState.location}
-        />
-        <div>
-        <br/>
-            <label htmlFor="guests">Invite Guests via Email</label>
-            <br/>
-            <input 
-            id="emailAddress"
-            type="email" multiple
-            input size="40"
-            placeholder="(addresses seperated by commas)"
-            name="guests"
-            onChange={inputChange}
-            value={formState.guests}
-            />
+                <label htmlFor="date">Date </label>
+                <input
+                  type="date"
+                  min="2021-01-01"
+                  max="2025-12-31"
+                  name="date"
+                  onChange={inputChange}
+                  value={formState.date}
+                />
+
+                <label htmlFor="time">Time </label>
+                <input
+                  type="time"
+                  name="time"
+                  onChange={inputChange}
+                  value={formState.time}
+                />
+
+                <label htmlFor="location">Location </label>
+                <input
+                  type="text"
+                  name="location"
+                  onChange={inputChange}
+                  value={formState.location}
+                />
+
+                <label htmlFor="guests">Invite Guests via Email</label>
+
+                <input
+                  id="emailAddress"
+                  type="email" multiple
+                  input size="40"
+                  placeholder="(addresses seperated by commas)"
+                  name="guests"
+                  onChange={inputChange}
+                  value={formState.guests}
+                />
+              </div>
+            </div> {/* left ends here */}
+
+            <div className="right">
+              <div>
+                <label htmlFor="drinks">Drinks</label>
+                <input
+                  className="items"
+                  name="drinks"
+                  type="text"
+                  placeholder="soda..."
+                  onChange={inputChange}
+                  value={formState.drinks}
+                />
+                <label htmlFor="sides">Sides</label>
+                <input
+                  className="items"
+                  name="sides"
+                  type="text"
+                  placeholder="chips..."
+                  onChange={inputChange}
+                  value={formState.sides}
+                />
+                <label htmlFor="entrees">Entrees</label>
+                <input
+                  className="items"
+                  name="entrees"
+                  type="text"
+                  placeholder="veggie burgers..."
+                  onChange={inputChange}
+                  value={formState.entrees}
+                />
+                <label htmlFor="desserts">Desserts</label>
+                <input
+                  className="items"
+                  name="desserts"
+                  type="text"
+                  placeholder="ice cream..."
+                  onChange={inputChange}
+                  value={formState.desserts}
+                />
+
+                <label htmlFor="supplies">Supplies</label>
+                <input
+                  className="items"
+                  name="supplies"
+                  type="text"
+                  placeholder="napkins..."
+                  onChange={inputChange}
+                  value={formState.supplies}
+                />
+
+              </div>
+            </div>{/* right ends here */}
+            <button id="submit" disabled={buttonDisabled}>
+              Create Event!
+            </button>
+          </form>
         </div>
-        <br/>
-        <p>Potluck Items needed:</p>
-        <br/>
-        <div className="items-container">
-            <label htmlFor="drinks">Drinks</label>
-            <input
-                className="items"
-                name="drinks"
-                type="text"
-                placeholder="soda..."
-                onChange={inputChange}
-                value={formState.drinks}
-            />
-            <label htmlFor="sides">Sides</label>
-            <input
-                className="items"
-                name="sides"
-                type="text"
-                placeholder="chips..."
-                onChange={inputChange}
-                value={formState.sides}
-            />
-            <label htmlFor="entrees">Entrees</label>
-            <input
-                className="items"
-                name="entrees"
-                type="text"
-                placeholder="veggie burgers..."
-                onChange={inputChange}
-                value={formState.entrees}
-            />
-            <label htmlFor="desserts">Desserts</label>
-            <input
-                className="items"
-                name="desserts"
-                type="text"
-                placeholder="ice cream..."
-                onChange={inputChange}
-                value={formState.desserts}
-            />
-            <br/>
-            <label htmlFor="supplies">Supplies</label>
-            <input
-                className="items"
-                name="supplies"
-                type="text"
-                placeholder="napkins..."
-                onChange={inputChange}
-                value={formState.supplies}
-            />
-        </div>
-
-        <br></br>
-
-        <button id="submit" disabled={buttonDisabled}>
-          Create Event!
-        </button>
-      </form>
       </div>
+
     </div>
   );
 };

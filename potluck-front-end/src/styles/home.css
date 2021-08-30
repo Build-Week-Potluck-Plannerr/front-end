@@ -8,7 +8,6 @@
   --background-color: #f1d9b3;
   --background-color2: #c4ac87;
   --background-color3: #dbc49f;
-  --accent-color: #326068;
   --accent-color2: #77352c;
 }
 
@@ -26,10 +25,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: var(--background-color2); */
-  color: var(--accent-color);
+  color: var(--accent-color2);
   margin-top: 70px;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 765px) {
+.home-title {
+    font-size: 1.3rem;
+}
 }
 
 .home-container {
@@ -39,15 +43,28 @@ a {
   height: 85vh;
 }
 
+@media only screen and (max-width: 765px) {
+.home-container {
+    flex-direction: column;
+}
+}
+
 .home-container .left,
 .home-container .right {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--background-color3);
+  background: var(--background-color2);
   height: 350px;
   width: 400px;
   margin: 20px;
   border-radius: 10px;
   font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 765px) {
+.home-container .left, .home-container .right {
+    height: 250px;
+    width: 300px;
+}
 }
