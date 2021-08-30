@@ -16,6 +16,8 @@ body {
   align-items: center;
   height: 70px;
   padding: 20px;
+  top: 0;
+  position: sticky;
 }
 
 .nav-header a {
@@ -37,6 +39,7 @@ body {
   top: 70px;
   left: 0;
   height: 489px;
+  z-index: 1000;
 }
 
 .side-menu-container .menu-logo {

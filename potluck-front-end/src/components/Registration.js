@@ -42,44 +42,46 @@ const Registration = (props) => {
   return (
     <>
       <Nav />
-      <div class='registrationcontainer'>
-      <img src={logo} alt='logo'/>
-      <form onSubmit={formSubmit}>
-        <h2>Create An Account</h2><br/>
-        <label htmlFor="username">Username:</label>
-        <input
-          id="username"
-          type="text"
-          name="username"
-          onChange={onInputChange}
-          maxLength="30"
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          onChange={onInputChange}
-          maxLength="30"
-        />
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          onChange={onInputChange}
-          maxLength="30"
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          id="password"
-          type="password"
-          name="password"
-          onChange={onInputChange}
-          maxLength="30"
-        /><br/><br/>
-        <button>Sign Up</button>
-      </form> 
+      <div className="center">
+        <div class='registrationcontainer'>
+          <h2>Create An Account</h2><br />
+          <img className="logo1" alt='logo' /><br />
+          <form onSubmit={formSubmit}>
+            <label htmlFor="username">Username:</label>
+            <input
+              id="username"
+              type="text"
+              name="username"
+              onChange={onInputChange}
+              maxLength="30"
+            />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              onChange={onInputChange}
+              maxLength="30"
+            />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              onChange={onInputChange}
+              maxLength="30"
+            />
+            <label htmlFor="password">Password:</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              onChange={onInputChange}
+              maxLength="30"
+            /><br /><br />
+            <button>Sign Up</button>
+          </form>
+        </div>
       </div>
     </>
   );
