@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Potluck from './Potluck';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+// import React, { useEffect, useState } from 'react';
+// import Potluck from './Potluck';
+// import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
 // const EventCard = () => {

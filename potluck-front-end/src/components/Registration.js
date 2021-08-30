@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userRegister } from "../api/actions";
@@ -43,9 +42,9 @@ const Registration = (props) => {
     <>
       <Nav />
       <div className="center">
-        <div class='registrationcontainer'>
+        <div className='registrationcontainer'>
           <h2>Create An Account</h2><br />
-          <img className="logo1" alt='logo' /><br />
+          <img className="logo1" src={logo} alt='logo' /><br />
           <form onSubmit={formSubmit}>
             <label htmlFor="username">Username:</label>
             <input

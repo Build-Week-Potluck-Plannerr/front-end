@@ -20,7 +20,7 @@ function Nav() {
         navToggle &&
         <div className="side-menu-container">
           <div className="menu-logo">
-            <img className="logo" src={logo} />
+            <img className="logo" src={logo} alt={logo} />
           </div>
           <div className="link-container"><Link to="/"><span className="span-icon"><ImHome3 className="menu-icon" /></span><span className="menu-text">Home</span></Link></div>
           <div className="link-container"><Link to="/potluck"><span className="span-icon"><ImSpoonKnife className="menu-icon" /></span><span className="menu-text">Create a Potluck</span></Link></div>
